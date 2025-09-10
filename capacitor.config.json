@@ -1,0 +1,6 @@
+{
+  "appId": "vite.com",
+  "appName": "ionic-one",
+  "webDir": "dist",
+  "bundledWebRuntime": false
+}

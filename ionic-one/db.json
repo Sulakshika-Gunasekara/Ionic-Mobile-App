@@ -1,0 +1,158 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Alice"
+    },
+    {
+      "id": "2",
+      "name": "Bob"
+    },
+    {
+      "email": "demo@site.com",
+      "password": "$2a$10$PFb8KRacbLtSsT3HvX/b.e.DF.TAHDQ2C0lPAHYqV.EXFtSIkD84y",
+      "name": "Demo User",
+      "id": "3"
+    },
+    {
+      "email": "demo1@site.com",
+      "password": "$2a$10$Jj0hbfOJr1CX9p1EqWdXf.fbKQT3pxDrPWuplr3dEG4Z/kgc0lRLq",
+      "name": "Demo User",
+      "id": "4"
+    },
+    {
+      "email": "d@site.com",
+      "password": "$2a$10$eTsGouviEkO1Nxi20.Jfou2yzhA/S3D9LZdNX5q/coH.FxaiXOBhG",
+      "name": "Demo User",
+      "id": "5"
+    },
+    {
+      "email": "s1@gmail.com",
+      "password": "$2a$10$.dEALOLPkLHxYAs5OIaqkOcvA6WjcIJmN3uYO9SD.bunRRljLAcJC",
+      "name": "ww",
+      "id": "6"
+    },
+    {
+      "email": "d1@site.com",
+      "password": "$2a$10$L5nl5RZ8yQhQPMnXBGDO4Or4ebX1qbBW.6BNvYUbUgRJMSZR3Qg5e",
+      "name": "bb",
+      "id": "7"
+    },
+    {
+      "id": "e94b",
+      "email": "d@site.com",
+      "password": "123456"
+    },
+    {
+      "id": "5f7d",
+      "email": "d@site.com",
+      "password": "123456"
+    },
+    {
+      "id": "74f4",
+      "email": "d@site.com",
+      "password": "123456"
+    },
+    {
+      "email": "d2@site.com",
+      "password": "$2a$10$ccWPUidm3Y/Epe.18eBN6eCujLRWe0azB5iGJ96VyGdkJbfUC7ZBG",
+      "id": "KztSwDn"
+    },
+    {
+      "email": "d3@site.com",
+      "password": "$2a$10$rEOB6.9WcnncpWPvPpQBp.t/D1a4NYDgawGAo4EsAGJglisEI82dy",
+      "id": "5Oora5V"
+    }
+  ],
+  "vehicles": [
+    {
+      "id": "1",
+      "image": "https://tse1.mm.bing.net/th/id/OIP.MgG7mYkX1nX1eZ6bX8u7mAHaE8?pid=Api&P=0&h=220",
+      "type": "Car",
+      "brand": "Toyota",
+      "model": "Aqua",
+      "pricePerDay": 45,
+      "location": "Colombo",
+      "seats": 4,
+      "isFavorite": "false"
+    },
+    {
+      "id": "2",
+      "image": "https://tse1.mm.bing.net/th/id/OIP.MgG7mYkX1nX1eZ6bX8u7mAHaE8?pid=Api&P=0&h=220",
+      "type": "bike",
+      "brand": "Honda",
+      "model": "Dio",
+      "pricePerDay": 10,
+      "location": "Kandy",
+      "seats": 2,
+      "isFavorite": "false"
+    },
+
+    {
+      "id": "4",
+      "image": "https://tse1.mm.bing.net/th/id/OIP.MgG7mYkX1nX1eZ6bX8u7mAHaE8?pid=Api&P=0&h=220",
+      "type": "car",
+      "brand": "Suzuki",
+      "model": "Swift",
+      "pricePerDay": 50,
+      "location": "Galle",
+      "seats": 4,
+      "isFavorite": "false"
+    },
+    {
+      "id": "5",
+      "image": "https://tse2.mm.bing.net/th/id/OIP.29ZWAnIi285Zz2XWY1gp0AHaEN?pid=Api&P=0&h=220",
+      "type": "van",
+      "brand": "Yamaha",
+      "model": "FZ",
+      "pricePerDay": 15,
+      "location": "Colombo",
+      "seats": 2,
+      "isFavorite": "false"
+    },
+    {
+      "id": "6",
+      "image": "https://tse4.mm.bing.net/th/id/OIP.WwXz9p7Z3pj5k8IQYFloGwHaE6?pid=Api&P=0&h=220",
+      "type": "van",
+      "brand": "Honda",
+      "model": "Civic",
+      "pricePerDay": 60,
+      "location": "Colombo",
+      "seats": 4,
+      "isFavorite": "false"
+    },
+    {
+      "id": "7",
+      "image": "https://tse4.mm.bing.net/th/id/OIP.WwXz9p7Z3pj5k8IQYFloGwHaE6?pid=Api&P=0&h=220",
+      "type": "van",
+      "brand": "Honda",
+      "model": "Civic",
+      "pricePerDay": 60,
+      "location": "Colombo",
+      "seats": 4,
+      "isFavorite": "false"
+    },
+    {
+      "id": "8",
+      "image": "https://tse4.mm.bing.net/th/id/OIP.WwXz9p7Z3pj5k8IQYFloGwHaE6?pid=Api&P=0&h=220",
+      "type": "van",
+      "brand": "Honda",
+      "model": "Civic",
+      "pricePerDay": 60,
+      "location": "Colombo",
+      "seats": 4,
+      "isFavorite": "false"
+    },
+    {
+      "id": "9",
+      "image": "https://tse4.mm.bing.net/th/id/OIP.WwXz9p7Z3pj5k8IQYFloGwHaE6?pid=Api&P=0&h=220",
+      "type": "van",
+      "brand": "Honda",
+      "model": "Civic",
+      "pricePerDay": 60,
+      "location": "Colombo",
+      "seats": 4,
+      "isFavorite": "true"
+    }
+  ]
+}

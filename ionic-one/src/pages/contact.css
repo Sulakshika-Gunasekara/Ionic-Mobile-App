@@ -1,0 +1,160 @@
+/* Page background + responsive content width */
+.contact-page {
+  --page-max: 920px;
+  background: var(--ion-background-color, #f9f9f9);
+}
+.contact-page > .inner {
+  max-width: var(--page-max);
+  margin: 0 auto;
+  padding-inline: 16px;
+}
+
+/* Cards: subtle elevation + hover lift */
+ion-card {
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  backdrop-filter: saturate(1.1);
+}
+ion-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08);
+}
+
+/* Card titles: icon alignment */
+ion-card-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+}
+
+/* Contact list + items */
+.contact-list {
+  margin-bottom: 20px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--ion-item-background, #fff);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+}
+.contact-item {
+  --padding-start: 16px;
+  --inner-padding-end: 16px;
+  font-size: 16px;
+  transition: background-color 0.15s ease;
+}
+.contact-item:hover {
+  background: color-mix(
+    in srgb,
+    var(--ion-color-light, #f2f2f7) 60%,
+    transparent
+  );
+}
+.contact-icon {
+  color: var(--ion-color-primary);
+  font-size: 22px;
+}
+
+/* Inputs: clearer focus ring, nicer corners */
+ion-input,
+ion-textarea {
+  --highlight-color-valid: var(--ion-color-primary);
+  --highlight-color-focused: var(--ion-color-primary);
+  --border-radius: 12px;
+  --padding-start: 12px;
+  --padding-end: 12px;
+  --background: var(--ion-item-background, #fff);
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.04);
+}
+
+/* Space between inputs */
+ion-input + ion-input,
+ion-input + ion-textarea,
+ion-textarea + ion-button {
+  margin-top: 12px;
+}
+
+/* Buttons: subtle lift + focus visible ring */
+ion-button {
+  border-radius: 12px;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+ion-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+ion-button:focus-visible {
+  outline: 2px solid transparent;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--ion-color-primary) 35%, white);
+}
+
+/* Social buttons layout (replaces padding-based centering) */
+.social-buttons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+  margin-top: 20px;
+}
+.social-buttons ion-button {
+  --padding-start: 12px;
+  --padding-end: 12px;
+}
+
+/* Kill the old padding hack */
+.ion-margin-vertical {
+  padding: 0; /* remove 30% side padding */
+}
+
+/* “Open in Maps” button style tweak */
+.map-button {
+  --border-radius: 12px;
+  --background: var(--ion-color-secondary);
+  --color: #fff;
+}
+
+/* Better spacing on small/large screens */
+@media (min-width: 600px) {
+  ion-card ion-card-content {
+    padding: 20px;
+  }
+}
+@media (min-width: 980px) {
+  .contact-page > .inner {
+    padding-inline: 24px;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .contact-page {
+    background: var(--ion-background-color, #0b0b0d);
+  }
+  .contact-list,
+  ion-card,
+  ion-input,
+  ion-textarea {
+    background: var(--ion-card-background, #141417);
+    --background: var(--ion-card-background, #141417);
+    color: var(--ion-text-color, #eaeaea);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.55);
+  }
+  .contact-item:hover {
+    background: color-mix(in srgb, #1b1b20 70%, transparent);
+  }
+}
+
+/* iOS tap highlight and safe-area polish */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+ion-content::part(scroll) {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* Keyboard-safe spacing for textareas (mobile nicety) */
+@supports (padding: max(0px)) {
+  ion-textarea {
+    padding-bottom: max(12px, env(safe-area-inset-bottom));
+  }
+}
