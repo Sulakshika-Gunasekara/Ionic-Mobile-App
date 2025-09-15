@@ -18,6 +18,7 @@ import Login from "./pages/login";
 import Signup from "./pages/signup";
 import Vehicles from "./pages/vehicles";
 import Booking from "./pages/Booking";
+import Final from "./pages/Final";
 
 import "@ionic/react/css/core.css";
 import "@ionic/react/css/normalize.css";
@@ -52,6 +53,8 @@ const AppShell: React.FC = () => {
         <Route path="/login" exact component={Login} />
         <Route path="/signup" exact component={Signup} />
         <Route path="/booking/:id" exact component={Booking} />
+        {/* <Route path="/vehicles" exact component={Vehicles} />
+        <Route path="/final/:id" exact component={Final} /> */}
       </IonRouterOutlet>
     );
   }
@@ -67,6 +70,7 @@ const AppShell: React.FC = () => {
         <Route path="/contact" exact component={Contact} />
         <Route path="/favourites" exact component={Favourites} />
         <Route path="/vehicles" exact component={Vehicles} />
+        <Route path="/final/:id" exact component={Final} />
       </IonRouterOutlet>
     </IonSplitPane>
   );

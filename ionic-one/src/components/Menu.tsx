@@ -77,7 +77,7 @@ const Menu: React.FC = () => {
 
   return (
     <IonMenu contentId="main" type="overlay">
-      <IonContent>
+      <IonContent className="menu-content ion-padding">
         <IonList id="inbox-list">
           {appPages.map((appPage, index) => {
             return (

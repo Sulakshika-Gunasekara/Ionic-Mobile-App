@@ -1,3 +1,9 @@
+/* Remove top margin/padding from feedback section */
+.feedback,
+.feedback-section {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
 /* Page background + responsive content width */
 .contact-page {
   --page-max: 920px;
@@ -93,7 +99,7 @@ ion-button:focus-visible {
 .social-buttons {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 12px;
+  gap: 25px;
   margin-top: 20px;
 }
 .social-buttons ion-button {

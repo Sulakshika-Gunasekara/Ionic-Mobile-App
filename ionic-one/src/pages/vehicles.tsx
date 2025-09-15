@@ -72,22 +72,22 @@ const Vehicles: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          {/* <IonButtons slot="start">
-            <IonBackButton />
-          </IonButtons> */}
+          <IonButtons slot="start">
+            <IonBackButton defaultHref="/" />
+          </IonButtons>
           <IonTitle>Vehicles</IonTitle>
         </IonToolbar>
       </IonHeader>
 
       <IonContent>
         {/* Debug info - remove in production */}
-        {/* {process.env.NODE_ENV === "development" && (
+        {process.env.NODE_ENV === "development" && (
           <IonItem>
             <IonLabel>
               <p>Debug: {location.search}</p>
             </IonLabel>
           </IonItem>
-        )} */}
+        )}
 
         {loading && (
           <div
@@ -117,7 +117,7 @@ const Vehicles: React.FC = () => {
             {vehicles.map((vehicle) => {
               const isFavourite = favourites.includes(vehicle.id);
               return (
-                <IonItem key={vehicle.id}>
+                <IonItem key={vehicle.id} className="vehicle-card" lines="none">
                   <IonLabel>
                     {/* Vehicle Image */}
                     {vehicle.image && (
@@ -138,30 +138,10 @@ const Vehicles: React.FC = () => {
                     )}
                     <h2>{vehicle.type}</h2>
                     <p>Location: {vehicle.location}</p>
-                    <p>Seats: {vehicle.seats}</p>
                   </IonLabel>
-                  {/* Book Now Button */}
-                  {/* <button
-                    style={{
-                      marginLeft: "auto",
-                      background: "#3880ff",
-                      color: "#fff",
-                      border: "none",
-                      borderRadius: "6px",
-                      padding: "8px 16px",
-                      cursor: "pointer",
-                    }}
-                    onClick={() =>
-                      alert(
-                        `Booking vehicle: ${
-                          vehicle.brand ? vehicle.brand + " " : ""
-                        }${vehicle.type}`
-                      )
-                    }>
-                    See More
-                  </button> */}
+
                   <IonButton
-                    style={{ marginLeft: "auto" }}
+                    style={{ margin: "auto", paddingRight: "20px" }}
                     color="primary"
                     routerLink={`/booking/${vehicle.id}`}>
                     See More

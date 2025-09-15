@@ -10,12 +10,13 @@ import {
   IonRouterLink,
   IonItem,
   IonToast,
+  IonImg,
 } from "@ionic/react";
 import { useState } from "react";
 import "./login.css";
 import { RouteComponentProps } from "react-router";
 import { loginUser, storage } from "./api";
-import "./login.css";
+
 interface LoginProps extends RouteComponentProps {
   history: any;
 }
@@ -66,17 +67,26 @@ const Login: React.FC<LoginProps> = ({ history }) => {
   };
 
   return (
-    <IonPage>
-      <IonHeader>
-        <IonToolbar>
-          <IonTitle>Login</IonTitle>
-        </IonToolbar>
-      </IonHeader>
-      <IonContent className="ion-padding login-center">
+    <IonPage className="ion-text-center ion-align-items-center ion-justify-content-center ion-padding">
+      <IonContent className="ion-margin ion-text-center ion-align-items-center ion-justify-content-center ">
         <form className="login-form" onSubmit={handleSubmit}>
-          <IonItem>
-            <IonLabel position="floating">Email</IonLabel>
+          <IonItem lines="none">
+            <IonImg
+              className="width:50px height:50px"
+              src="https://png.pngtree.com/png-clipart/20230817/original/pngtree-taxi-booking-rgb-color-icon-prebooking-design-business-vector-picture-image_11014402.png"
+            />
+          </IonItem>
+
+          <IonItem lines="none">
+            <IonTitle className="login-title ">Login</IonTitle>
+          </IonItem>
+
+          <IonItem lines="none">
+            <IonLabel position="stacked" className="label-text">
+              Email
+            </IonLabel>
             <IonInput
+              className="input-field"
               type="email"
               value={email}
               onIonChange={(e: any) => setEmail(e.detail.value!)}
@@ -84,9 +94,12 @@ const Login: React.FC<LoginProps> = ({ history }) => {
             />
           </IonItem>
 
-          <IonItem>
-            <IonLabel position="floating">Password</IonLabel>
+          <IonItem lines="none">
+            <IonLabel position="stacked" className="label-text ">
+              Password
+            </IonLabel>
             <IonInput
+              className="input-field"
               type="password"
               value={password}
               onIonChange={(e: any) => setPassword(e.detail.value!)}
@@ -98,7 +111,7 @@ const Login: React.FC<LoginProps> = ({ history }) => {
             type="submit"
             expand="block"
             disabled={loading}
-            className="login-btn">
+            className="login-btn ion-padding-top">
             {loading ? "Logging in..." : "Login"}
           </IonButton>
 

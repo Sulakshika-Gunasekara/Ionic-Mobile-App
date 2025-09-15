@@ -135,3 +135,25 @@ export async function signupUser(email: string, password: string) {
 export async function getUser<T = any>(id: string | number): Promise<T> {
   return apiGet<T>(`/users/${id}`);
 }
+
+// Get vehicles filtered by type and location
+export async function getVehiclesByTypeAndLocation<T = any>(
+  type?: string,
+  location?: string,
+  extraParams: Record<string, string | number | boolean | undefined> = {}
+): Promise<T> {
+  // For json-server, exact match works as /vehicles?type=Car&location=Colombo
+  // If you need partial, use _like (uncomment below lines and comment the exact keys)
+  return apiGet<T>("/vehicles", {
+    type: type || undefined,
+    location: location || undefined,
+    ...extraParams,
+  });
+
+  // Partial match variant (json-server):
+  // return apiGet<T>("/vehicles", {
+  //   type_like: type || undefined,
+  //   location_like: location || undefined,
+  //   ...extraParams,
+  // });
+}
