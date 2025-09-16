@@ -29,11 +29,18 @@ import {
   sendOutline,
 } from "ionicons/icons";
 import "./contact.css";
+import { useState } from "react";
+import { apiPost } from "./api";
 
 import { useParams } from "react-router";
 
 const Contact: React.FC = () => {
   const { name } = useParams<{ name: string }>();
+
+  const [nameValue, setNameValue] = useState("");
+
+  const [messageValue, setMessageValue] = useState("");
+
   return (
     <IonPage>
       <IonHeader>
@@ -100,25 +107,33 @@ const Contact: React.FC = () => {
                   label="Your Name"
                   labelPlacement="floating"
                   fill="outline"
+                  value={nameValue}
+                  onIonChange={(e) => setNameValue(e.detail.value!)}
                 />
-                <IonInput
-                  type="email"
-                  label="Your Email"
-                  labelPlacement="floating"
-                  fill="outline"
-                  className="ion-margin-top"
-                />
+
                 <IonTextarea
                   label="Your Feedback"
                   labelPlacement="floating"
                   fill="outline"
                   autoGrow
                   className="ion-margin-top"
+                  value={messageValue}
+                  onIonChange={(e) => setMessageValue(e.detail.value!)}
                 />
                 <IonButton
                   expand="block"
                   color="success"
-                  className="ion-margin-top">
+                  className="ion-margin-top"
+                  onClick={() =>
+                    apiPost("/feedback", {
+                      name: nameValue,
+                      message: messageValue,
+                    }).then(() => {
+                      setNameValue("");
+                      setMessageValue("");
+                      alert("Feedback submitted. Thank you!");
+                    })
+                  }>
                   Submit
                 </IonButton>
               </IonCardContent>

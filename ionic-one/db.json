@@ -16,7 +16,6 @@
     },
     {
       "email": "demo1@site.com",
-
       "password": "$2a$10$Jj0hbfOJr1CX9p1EqWdXf.fbKQT3pxDrPWuplr3dEG4Z/kgc0lRLq",
       "name": "Demo User",
       "id": "4"
@@ -63,96 +62,170 @@
       "email": "d3@site.com",
       "password": "$2a$10$rEOB6.9WcnncpWPvPpQBp.t/D1a4NYDgawGAo4EsAGJglisEI82dy",
       "id": "5Oora5V"
+    },
+    {
+      "email": "d4@site.com",
+      "password": "$2a$10$0RYmLdHA..PbsKdJNz886e36C/QqGVT2NlFz6K1fbFjJWsm3B9TAW",
+      "id": "A92c_0j"
     }
   ],
   "vehicles": [
     {
       "id": "1",
       "image": "https://emucarcarriers.com.au/public/images/service/car-carrier.webp",
-      "type": "van",
+      "type": "ONE_VEHICLE",
       "brand": "Toyota",
       "model": "HiAce Carrier",
       "pricePerDay": 120,
-      "location": "Colombo",
-      "vehicles": 3,
+
       "isFavorite": false
     },
     {
       "id": "2",
       "image": "https://tse2.mm.bing.net/th/id/OIP.u3e2dcTzUY1pSgi4H1a3VQHaCe?pid=Api&P=0&h=220",
-      "type": "car",
+      "type": "TWO_VEHICLES",
       "brand": "Honda",
       "model": "Dio Carrier",
       "pricePerDay": 50,
-      "location": "Kandy",
-      "vehicles": 1,
+
       "isFavorite": false
     },
     {
       "id": "3",
       "image": "https://tse1.mm.bing.net/th/id/OIP.rBZkTXYI9LrFamnhaOrA9QHaFj?pid=Api&P=0&h=220",
-      "type": "van",
+      "type": "FOUR_VEHICLES",
       "brand": "Suzuki",
       "model": "Swift Transporter",
       "pricePerDay": 130,
-      "location": "Galle",
-      "vehicles": 2,
+
       "isFavorite": false
     },
     {
       "id": "4",
       "image": "https://emucarcarriers.com.au/public/images/service/car-carrier.webp",
-      "type": "van",
+      "type": "ONE_VEHICLE",
       "brand": "Yamaha",
       "model": "FZ Carrier",
       "pricePerDay": 80,
-      "location": "Colombo",
-      "vehicles": 2,
+
       "isFavorite": false
     },
     {
       "id": "5",
       "image": "https://emucarcarriers.com.au/public/images/service/car-carrier.webp",
-      "type": "car",
+      "type": "TWO_VEHICLES",
       "brand": "Honda",
       "model": "Civic Carrier",
       "pricePerDay": 150,
-      "location": "Colombo",
-      "vehicles": 3,
+
       "isFavorite": false
     },
     {
       "id": "6",
       "image": "https://emucarcarriers.com.au/public/images/service/car-carrier.webp",
-      "type": "van",
+      "type": "FOUR_VEHICLES",
       "brand": "Honda",
       "model": "Civic Carrier",
       "pricePerDay": 150,
-      "location": "Colombo",
-      "vehicles": 2,
+
       "isFavorite": false
     },
     {
       "id": "7",
       "image": "https://emucarcarriers.com.au/public/images/service/car-carrier.webp",
-      "type": "van",
+      "type": "ONE_VEHICLE",
       "brand": "Honda",
       "model": "Civic Carrier",
       "pricePerDay": 150,
-      "location": "Colombo",
-      "vehicles": 4,
+
       "isFavorite": false
     },
     {
       "id": "8",
       "image": "https://emucarcarriers.com.au/public/images/service/car-carrier.webp",
-      "type": "van",
+      "type": "TWO_VEHICLES",
       "brand": "Honda",
       "model": "Civic Carrier",
       "pricePerDay": 150,
-      "location": "Colombo",
-      "vehicles": 4,
+
       "isFavorite": true
+    }
+  ],
+  "feedback": [
+    {
+      "id": "1",
+      "name": "John Doe",
+      "message": "This is a feedback message from John Doe."
+    },
+    {
+      "id": "2",
+      "name": "Jane Doe",
+      "message": "This is a feedback message from Jane Doe."
+    },
+    {
+      "name": "Peterson",
+      "feedback": "Service Delayed",
+      "id": "gceFRx2"
+    },
+    {
+      "feedback": "Service Delayed",
+      "id": "D8b_Rhf"
+    },
+    {
+      "name": "Sula",
+      "message": "Never this is going to be good",
+      "id": "PTEvJSe"
+    },
+    {
+      "name": "Sula",
+      "message": "Never this is going to be good",
+      "id": "JljxyxW"
+    },
+    {
+      "feedback": "Service Delayed",
+      "id": "FsbWkLI"
+    },
+    {
+      "feedback": "Service Delayed",
+      "id": "Ce1Q_0e"
+    },
+    {
+      "feedback": "Service Delayed",
+      "id": "AMVcgo3"
+    }
+  ],
+  "bookings": [
+    {
+      "id": "1",
+      "vehicleId": "1",
+      "userId": "3",
+      "date": "2025-09-06",
+      "status": "confirmed",
+      "createdAt": "2025-09-05T10:00:00.000Z"
+    },
+    {
+      "id": "2",
+      "vehicleId": "2",
+      "userId": "4",
+      "date": "2025-09-06",
+      "status": "confirmed",
+      "createdAt": "2025-09-05T11:00:00.000Z"
+    },
+    {
+      "id": "3",
+      "vehicleId": "5",
+      "userId": "5",
+      "date": "2025-09-06",
+      "status": "confirmed",
+      "createdAt": "2025-09-05T12:00:00.000Z"
+    },
+    {
+      "id": "4",
+      "vehicleId": "3",
+      "userId": "3",
+      "date": "2025-09-07",
+      "status": "confirmed",
+      "createdAt": "2025-09-06T10:00:00.000Z"
     }
   ]
 }
