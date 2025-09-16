@@ -149,11 +149,103 @@ export async function getVehiclesByTypeAndLocation<T = any>(
     location: location || undefined,
     ...extraParams,
   });
+}
 
-  // Partial match variant (json-server):
-  // return apiGet<T>("/vehicles", {
-  //   type_like: type || undefined,
-  //   location_like: location || undefined,
-  //   ...extraParams,
-  // });
+export async function postFeedback(
+  name: string,
+  feedback: string,
+  rating: number
+) {
+  return apiPost<{ message: string }>("/feedback", { name, feedback, rating });
+}
+
+/** ---------- NEW: Available Vehicles API ---------- **/
+
+// Interface for available vehicles response
+export interface AvailableVehiclesResponse {
+  success: boolean;
+  count: number;
+  date: string;
+  filters: {
+    type?: string;
+    location?: string;
+  };
+  vehicles: any[];
+}
+
+// Interface for vehicle availability response
+export interface VehicleAvailabilityResponse {
+  success: boolean;
+  date: string;
+  filters: {
+    type?: string;
+    location?: string;
+  };
+  total: number;
+  available: number;
+  booked: number;
+  availableVehicles: any[];
+}
+
+// Get available vehicles for a specific date
+export async function getAvailableVehicles(
+  date: string, // Format: YYYY-MM-DD
+  type?: string, // e.g., 'van', 'car'
+  location?: string, // e.g., 'Colombo'
+  extraParams: Record<string, string | number | boolean | undefined> = {}
+): Promise<AvailableVehiclesResponse> {
+  if (!date) {
+    throw new Error("Date parameter is required (YYYY-MM-DD format)");
+  }
+
+  return apiGet<AvailableVehiclesResponse>("/available-vehicles", {
+    date,
+    type: type || undefined,
+    location: location || undefined,
+    ...extraParams,
+  });
+}
+
+// Get vehicle availability summary for a specific date
+export async function getVehicleAvailability(
+  date: string, // Format: YYYY-MM-DD
+  type?: string, // e.g., 'van', 'car'
+  location?: string, // e.g., 'Colombo'
+  extraParams: Record<string, string | number | boolean | undefined> = {}
+): Promise<VehicleAvailabilityResponse> {
+  if (!date) {
+    throw new Error("Date parameter is required (YYYY-MM-DD format)");
+  }
+
+  return apiGet<VehicleAvailabilityResponse>("/vehicles/availability", {
+    date,
+    type: type || undefined,
+    location: location || undefined,
+    ...extraParams,
+  });
+}
+
+// Helper function to format date for API calls
+export function formatDateForAPI(date: Date): string {
+  return date.toISOString().split("T")[0]; // Returns YYYY-MM-DD format
+}
+
+// Helper function to get available vehicles for today
+export async function getAvailableVehiclesToday(
+  type?: string,
+  location?: string
+): Promise<AvailableVehiclesResponse> {
+  const today = formatDateForAPI(new Date());
+  return getAvailableVehicles(today, type, location);
+}
+
+// Helper function to get available vehicles for tomorrow
+export async function getAvailableVehiclesTomorrow(
+  type?: string,
+  location?: string
+): Promise<AvailableVehiclesResponse> {
+  const tomorrow = new Date();
+  tomorrow.setDate(tomorrow.getDate() + 1);
+  const tomorrowStr = formatDateForAPI(tomorrow);
+  return getAvailableVehicles(tomorrowStr, type, location);
 }

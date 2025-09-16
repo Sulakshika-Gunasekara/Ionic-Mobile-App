@@ -81,66 +81,6 @@ const Signup: React.FC<SignupProps> = ({ history }) => {
   };
 
   return (
-    // <IonPage>
-    //   <IonContent className="ion-padding login-center">
-    //     <form className="login-form" onSubmit={handleSubmit}>
-    //       <IonItem>
-    //         <IonLabel position="floating">Email</IonLabel>
-    //         <IonInput
-    //           type="email"
-    //           value={email}
-    //           onIonChange={(e: any) => setEmail(e.detail.value!)}
-    //           required
-    //         />
-    //       </IonItem>
-
-    //       <IonItem>
-    //         <IonLabel position="floating">Password</IonLabel>
-    //         <IonInput
-    //           type="password"
-    //           value={password}
-    //           onIonChange={(e: any) => setPassword(e.detail.value!)}
-    //           required
-    //         />
-    //       </IonItem>
-
-    //       <IonItem>
-    //         <IonLabel position="floating">Confirm Password</IonLabel>
-    //         <IonInput
-    //           type="password"
-    //           value={confirmPassword}
-    //           onIonChange={(e: any) => setConfirmPassword(e.detail.value!)}
-    //           required
-    //         />
-    //       </IonItem>
-
-    //       <IonButton
-    //         type="submit"
-    //         expand="block"
-    //         disabled={loading}
-    //         className="login-btn">
-    //         {loading ? "Creating Account..." : "Sign Up"}
-    //       </IonButton>
-
-    //       <div className="login-signup-link">
-    //         <IonLabel>
-    //           Already have an account?{" "}
-    //           <IonRouterLink routerLink="/login">Login</IonRouterLink>
-    //         </IonLabel>
-    //       </div>
-    //     </form>
-
-    //     {/* Show error message */}
-    //     <IonToast
-    //       isOpen={!!error}
-    //       message={error}
-    //       duration={3000}
-    //       onDidDismiss={() => setError("")}
-    //       color="danger"
-    //     />
-    //   </IonContent>
-    // </IonPage>
-
     <IonPage className="ion-text-center ion-align-items-center ion-justify-content-center ion-padding">
       <IonContent className="ion-margin ion-text-center ion-align-items-center ion-justify-content-center ">
         <form className="login-form" onSubmit={handleSubmit}>
