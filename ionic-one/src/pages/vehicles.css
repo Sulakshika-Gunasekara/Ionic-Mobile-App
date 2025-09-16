@@ -1,46 +1,93 @@
+/* ===== Vehicles Page Container ===== */
 .vehicles-content {
   min-height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   background: #f8f9fa;
+  padding: 20px;
 }
 
+/* ===== List Styling ===== */
 .vehicles-list {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ===== Vehicle Card ===== */
+.vehicle-card {
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  margin-bottom: 20px;
+  background: #fff;
+  padding: 18px 16px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.vehicle-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* ===== Vehicle Image ===== */
+.vehicle-card img {
   width: 100%;
-  max-width: 500px;
-  margin: 0 auto;
+  max-height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 12px;
 }
 
-.vehicle-card {
-  border-radius: 16px;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
-  margin-bottom: 18px;
-  background: #fff;
-  padding: 18px 16px;
-  display: flex;
-  align-items: center;
-  width: 90%;
-  max-width: 320px;
-  min-width: 220px;
+/* ===== Vehicle Info ===== */
+.vehicle-card h2 {
+  font-size: 1.2rem;
+  margin: 6px 0;
+  color: #333;
 }
 
-.vehicles-list {
-  width: 100%;
-  max-width: 500px;
-  margin: 0 auto;
+.vehicle-card h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 4px 0;
+  color: #555;
 }
 
-.vehicle-card {
-  border-radius: 16px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-  margin-bottom: 18px;
-  background: #fff;
-  padding: 18px 16px;
-  display: flex;
-  align-items: center;
+.vehicle-card p {
+  font-size: 0.9rem;
+  margin: 2px 0;
+  color: #666;
+}
+
+/* ===== See More Button ===== */
+.vehicle-card ion-button {
+  margin-top: 12px;
+  align-self: flex-end;
+  --border-radius: 12px;
+  --box-shadow: none;
+  --padding-start: 16px;
+  --padding-end: 16px;
+  font-size: 0.9rem;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 480px) {
+  .vehicle-card {
+    padding: 14px;
+  }
+
+  .vehicle-card h2 {
+    font-size: 1rem;
+  }
+
+  .vehicle-card p {
+    font-size: 0.85rem;
+  }
+
+  .vehicle-card img {
+    max-height: 150px;
+  }
 }

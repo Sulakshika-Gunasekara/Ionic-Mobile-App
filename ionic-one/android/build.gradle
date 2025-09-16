@@ -2,9 +2,16 @@
 
 buildscript {
     
+//    repositories {
+//        google()
+//        mavenCentral()
+//    }
     repositories {
         google()
         mavenCentral()
+        flatDir {
+            dirs '../capacitor-cordova-android-plugins/src/main/libs', 'libs'
+        }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:8.7.2'

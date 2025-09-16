@@ -15,11 +15,13 @@ import {
   IonSelect,
   IonSelectOption,
   IonRange,
-  IonButton,
+  IonButtons,
   IonIcon,
   IonFooter,
   IonText,
   IonAlert,
+  IonMenuButton,
+  IonRouterLink,
 } from "@ionic/react";
 import {
   moon,
@@ -104,6 +106,9 @@ const Settings: React.FC = () => {
     <IonPage>
       <IonHeader translucent>
         <IonToolbar>
+          <IonButtons slot="start">
+            <IonMenuButton />
+          </IonButtons>
           <IonTitle>Settings</IonTitle>
         </IonToolbar>
       </IonHeader>
@@ -157,14 +162,14 @@ const Settings: React.FC = () => {
 
         {/* Appearance */}
         <IonList inset>
-          <IonListHeader>
+          {/* <IonListHeader>
             <IonLabel>
               <IonIcon icon={moon} className="mr-2" />
               Appearance
             </IonLabel>
-          </IonListHeader>
+          </IonListHeader> */}
 
-          <IonItem>
+          {/* <IonItem>
             <IonLabel>Theme</IonLabel>
             <IonSelect
               interface="popover"
@@ -175,11 +180,11 @@ const Settings: React.FC = () => {
               <IonSelectOption value="dark">Dark</IonSelectOption>
             </IonSelect>
             <IonNote slot="end">applies instantly</IonNote>
-          </IonItem>
+          </IonItem> */}
         </IonList>
 
         {/* Notifications */}
-        <IonList inset>
+        {/* <IonList inset>
           <IonListHeader>
             <IonLabel>
               <IonIcon icon={notifications} className="mr-2" />
@@ -218,7 +223,7 @@ const Settings: React.FC = () => {
               onIonChange={(e) => save({ marketingEmails: e.detail.checked })}
             />
           </IonItem>
-        </IonList>
+        </IonList> */}
 
         {/* Privacy */}
         {/* <IonList inset>
@@ -311,12 +316,12 @@ const Settings: React.FC = () => {
           <IonText className="ion-padding-start">
             {saving ? "Saving…" : "All changes saved"}
           </IonText>
-          <IonButton
+          {/* <IonButton
             slot="end"
             fill="clear"
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
             Back to Top
-          </IonButton>
+          </IonButton> */}
         </IonToolbar>
       </IonFooter>
     </IonPage>

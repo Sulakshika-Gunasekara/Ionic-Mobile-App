@@ -16,6 +16,7 @@
     },
     {
       "email": "demo1@site.com",
+
       "password": "$2a$10$Jj0hbfOJr1CX9p1EqWdXf.fbKQT3pxDrPWuplr3dEG4Z/kgc0lRLq",
       "name": "Demo User",
       "id": "4"
@@ -67,92 +68,91 @@
   "vehicles": [
     {
       "id": "1",
-      "image": "https://tse1.mm.bing.net/th/id/OIP.MgG7mYkX1nX1eZ6bX8u7mAHaE8?pid=Api&P=0&h=220",
-      "type": "Car",
+      "image": "https://emucarcarriers.com.au/public/images/service/car-carrier.webp",
+      "type": "van",
       "brand": "Toyota",
-      "model": "Aqua",
-      "pricePerDay": 45,
+      "model": "HiAce Carrier",
+      "pricePerDay": 120,
       "location": "Colombo",
-      "seats": 4,
-      "isFavorite": "false"
+      "vehicles": 3,
+      "isFavorite": false
     },
     {
       "id": "2",
-      "image": "https://tse1.mm.bing.net/th/id/OIP.MgG7mYkX1nX1eZ6bX8u7mAHaE8?pid=Api&P=0&h=220",
-      "type": "bike",
+      "image": "https://tse2.mm.bing.net/th/id/OIP.u3e2dcTzUY1pSgi4H1a3VQHaCe?pid=Api&P=0&h=220",
+      "type": "car",
       "brand": "Honda",
-      "model": "Dio",
-      "pricePerDay": 10,
+      "model": "Dio Carrier",
+      "pricePerDay": 50,
       "location": "Kandy",
-      "seats": 2,
-      "isFavorite": "false"
+      "vehicles": 1,
+      "isFavorite": false
     },
-
+    {
+      "id": "3",
+      "image": "https://tse1.mm.bing.net/th/id/OIP.rBZkTXYI9LrFamnhaOrA9QHaFj?pid=Api&P=0&h=220",
+      "type": "van",
+      "brand": "Suzuki",
+      "model": "Swift Transporter",
+      "pricePerDay": 130,
+      "location": "Galle",
+      "vehicles": 2,
+      "isFavorite": false
+    },
     {
       "id": "4",
-      "image": "https://tse1.mm.bing.net/th/id/OIP.MgG7mYkX1nX1eZ6bX8u7mAHaE8?pid=Api&P=0&h=220",
-      "type": "car",
-      "brand": "Suzuki",
-      "model": "Swift",
-      "pricePerDay": 50,
-      "location": "Galle",
-      "seats": 4,
-      "isFavorite": "false"
+      "image": "https://emucarcarriers.com.au/public/images/service/car-carrier.webp",
+      "type": "van",
+      "brand": "Yamaha",
+      "model": "FZ Carrier",
+      "pricePerDay": 80,
+      "location": "Colombo",
+      "vehicles": 2,
+      "isFavorite": false
     },
     {
       "id": "5",
-      "image": "https://tse2.mm.bing.net/th/id/OIP.29ZWAnIi285Zz2XWY1gp0AHaEN?pid=Api&P=0&h=220",
-      "type": "van",
-      "brand": "Yamaha",
-      "model": "FZ",
-      "pricePerDay": 15,
+      "image": "https://emucarcarriers.com.au/public/images/service/car-carrier.webp",
+      "type": "car",
+      "brand": "Honda",
+      "model": "Civic Carrier",
+      "pricePerDay": 150,
       "location": "Colombo",
-      "seats": 2,
-      "isFavorite": "false"
+      "vehicles": 3,
+      "isFavorite": false
     },
     {
       "id": "6",
-      "image": "https://tse4.mm.bing.net/th/id/OIP.WwXz9p7Z3pj5k8IQYFloGwHaE6?pid=Api&P=0&h=220",
+      "image": "https://emucarcarriers.com.au/public/images/service/car-carrier.webp",
       "type": "van",
       "brand": "Honda",
-      "model": "Civic",
-      "pricePerDay": 60,
+      "model": "Civic Carrier",
+      "pricePerDay": 150,
       "location": "Colombo",
-      "seats": 4,
-      "isFavorite": "false"
+      "vehicles": 2,
+      "isFavorite": false
     },
     {
       "id": "7",
-      "image": "https://tse4.mm.bing.net/th/id/OIP.WwXz9p7Z3pj5k8IQYFloGwHaE6?pid=Api&P=0&h=220",
+      "image": "https://emucarcarriers.com.au/public/images/service/car-carrier.webp",
       "type": "van",
       "brand": "Honda",
-      "model": "Civic",
-      "pricePerDay": 60,
+      "model": "Civic Carrier",
+      "pricePerDay": 150,
       "location": "Colombo",
-      "seats": 4,
-      "isFavorite": "false"
+      "vehicles": 4,
+      "isFavorite": false
     },
     {
       "id": "8",
-      "image": "https://tse4.mm.bing.net/th/id/OIP.WwXz9p7Z3pj5k8IQYFloGwHaE6?pid=Api&P=0&h=220",
+      "image": "https://emucarcarriers.com.au/public/images/service/car-carrier.webp",
       "type": "van",
       "brand": "Honda",
-      "model": "Civic",
-      "pricePerDay": 60,
+      "model": "Civic Carrier",
+      "pricePerDay": 150,
       "location": "Colombo",
-      "seats": 4,
-      "isFavorite": "false"
-    },
-    {
-      "id": "9",
-      "image": "https://tse4.mm.bing.net/th/id/OIP.WwXz9p7Z3pj5k8IQYFloGwHaE6?pid=Api&P=0&h=220",
-      "type": "van",
-      "brand": "Honda",
-      "model": "Civic",
-      "pricePerDay": 60,
-      "location": "Colombo",
-      "seats": 4,
-      "isFavorite": "true"
+      "vehicles": 4,
+      "isFavorite": true
     }
   ]
 }

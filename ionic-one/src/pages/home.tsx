@@ -54,8 +54,11 @@ const Home: React.FC = () => {
         <IonList className="home-list">
           <form className="home-form" onSubmit={handleFormSubmit}>
             <IonItem>
-              <IonLabel position="floating">Location</IonLabel>
+              <IonLabel position="floating" className="home-label">
+                Location
+              </IonLabel>
               <IonInput
+                className="home-input"
                 value={location}
                 placeholder="Enter location"
                 onIonChange={(event) =>
@@ -64,8 +67,11 @@ const Home: React.FC = () => {
               />
             </IonItem>
             <IonItem>
-              <IonLabel position="floating">Vehicle Type</IonLabel>
+              <IonLabel position="floating" className="home-label">
+                Vehicle Type
+              </IonLabel>
               <IonInput
+                className="home-input"
                 value={type}
                 placeholder="Enter Type"
                 onIonChange={(event) => setType(event.detail.value as string)}

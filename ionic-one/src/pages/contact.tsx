@@ -69,7 +69,6 @@ const Contact: React.FC = () => {
                 <IonLabel>071-1234567</IonLabel>
               </IonItem>
             </IonList>
-
             {/* Office Location */}
             <IonCard>
               <IonCardHeader>
@@ -90,73 +89,67 @@ const Contact: React.FC = () => {
               </IonCardContent>
             </IonCard>
 
-            {/* Feedback Form ... unchanged ... */}
+            <IonCard>
+              <IonCardHeader>
+                <IonCardTitle>
+                  <IonIcon icon={sendOutline} slot="start" /> Feedback
+                </IonCardTitle>
+              </IonCardHeader>
+              <IonCardContent>
+                <IonInput
+                  label="Your Name"
+                  labelPlacement="floating"
+                  fill="outline"
+                />
+                <IonInput
+                  type="email"
+                  label="Your Email"
+                  labelPlacement="floating"
+                  fill="outline"
+                  className="ion-margin-top"
+                />
+                <IonTextarea
+                  label="Your Feedback"
+                  labelPlacement="floating"
+                  fill="outline"
+                  autoGrow
+                  className="ion-margin-top"
+                />
+                <IonButton
+                  expand="block"
+                  color="success"
+                  className="ion-margin-top">
+                  Submit
+                </IonButton>
+              </IonCardContent>
+            </IonCard>
 
             {/* Social Buttons */}
-            <div className="social-buttons">{/* buttons as-is */}</div>
+            <div className="ion-margin-vertical">
+              <IonButton
+                expand="block"
+                color="primary"
+                href="https://www.facebook.com/ionicframework">
+                <IonIcon icon={logoFacebook} slot="start" />
+                Facebook
+              </IonButton>
+              <IonButton
+                expand="block"
+                color="tertiary"
+                href="https://www.instagram.com/ionicframework">
+                <IonIcon icon={logoInstagram} slot="start" />
+                Instagram
+              </IonButton>
+              <IonButton
+                expand="block"
+                color="medium"
+                href="https://twitter.com/ionicframework">
+                <IonIcon icon={logoTwitter} slot="start" />
+                Twitter
+              </IonButton>
+            </div>
           </div>
         </IonContent>
-
-        {/* Feedback Form */}
-        <IonCard>
-          <IonCardHeader>
-            <IonCardTitle>
-              <IonIcon icon={sendOutline} slot="start" /> Feedback
-            </IonCardTitle>
-          </IonCardHeader>
-          <IonCardContent>
-            <IonInput
-              label="Your Name"
-              labelPlacement="floating"
-              fill="outline"
-            />
-            <IonInput
-              type="email"
-              label="Your Email"
-              labelPlacement="floating"
-              fill="outline"
-              className="ion-margin-top"
-            />
-            <IonTextarea
-              label="Your Feedback"
-              labelPlacement="floating"
-              fill="outline"
-              autoGrow
-              className="ion-margin-top"
-            />
-            <IonButton
-              expand="block"
-              color="success"
-              className="ion-margin-top">
-              Submit
-            </IonButton>
-          </IonCardContent>
-        </IonCard>
-
-        {/* Social Buttons */}
-        <div className="ion-margin-vertical">
-          <IonButton
-            expand="block"
-            color="primary"
-            href="https://www.facebook.com/ionicframework">
-            <IonIcon icon={logoFacebook} slot="start" />
-            Facebook
-          </IonButton>
-          <IonButton
-            expand="block"
-            color="tertiary"
-            href="https://www.instagram.com/ionicframework">
-            <IonIcon icon={logoInstagram} slot="start" />
-            Instagram
-          </IonButton>
-          <IonButton
-            expand="block"
-            color="medium"
-            href="https://twitter.com/ionicframework">
-            <IonIcon icon={logoTwitter} slot="start" />
-            Twitter
-          </IonButton>
-        </div>
       </IonContent>
     </IonPage>
   );
