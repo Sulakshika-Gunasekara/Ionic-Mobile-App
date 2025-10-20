@@ -1,41 +1,227 @@
 .home-content {
-  min-height: 100vh;
-  width: 100vw;
+  max-height: 100vh;
   display: flex;
   flex-direction: column;
-  padding-top: 20%;
-  padding: 16px 32px;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
   margin-top: 30%;
-  margin: auto;
-  background: #f8f9fa;
 }
 
 .home-list {
   width: 100%;
-
-  margin: auto;
+  max-width: 500px;
   background: #fff;
-  border-radius: 12px;
+  border-radius: 16px;
 
-  padding: 24px 16px;
+  padding: 24px;
+  margin-top: 10%;
 }
 
 .home-form {
+  margin-top: 10%;
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 24px;
 }
 
-.home-btn {
-  margin-top: 18px;
-  width: 30%;
-  margin-left: 25%;
+.home-form-item {
+  --padding-start: 0;
+  --inner-padding-end: 0;
+  --border-radius: 12px;
+  --background: #f8f9fa;
+  --background-hover: #e9ecef;
+  --background-focused: #e9ecef;
+  margin-bottom: 8px;
 }
-.home-input {
-  --padding-start: 12px;
-}
+
 .home-label {
   font-weight: 600;
   font-size: 16px;
-  padding-bottom: 30px;
+  color: #2c3e50;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.home-input {
+  --padding-start: 16px;
+  --padding-end: 16px;
+  --padding-top: 16px;
+  --padding-bottom: 16px;
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid #e0e0e0;
+  font-size: 16px;
+}
+
+.home-input:focus {
+  border-color: #3880ff;
+  box-shadow: 0 0 0 2px rgba(56, 128, 255, 0.2);
+}
+
+.home-btn {
+  margin-top: 16px;
+  margin-left: 30%;
+  --border-radius: 12px;
+  --padding-top: 20px;
+  --padding-bottom: 20px;
+  font-weight: 600;
+  font-size: 16px;
+  height: 50px;
+  --box-shadow: 0 4px 12px rgba(56, 128, 255, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.home-btn:active {
+  transform: translateY(2px);
+  --box-shadow: 0 2px 6px rgba(56, 128, 255, 0.3);
+}
+
+.home-icon {
+  font-size: 20px;
+  margin-right: 12px;
+  color: #3880ff;
+}
+
+.home-error {
+  margin: 8px 0 0 16px;
+  font-size: 14px;
+}
+
+.home-loading {
+  display: flex;
+  justify-content: center;
+  padding: 24px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .home-content {
+    padding: 12px;
+    justify-content: flex-start;
+    padding-top: 30%;
+    margin-top: 30%;
+  }
+
+  .home-list {
+    padding: 20px 16px;
+    border-radius: 12px;
+  }
+
+  .home-btn {
+    width: 60%;
+    margin-left: 20%;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-content {
+    padding-top: 10%;
+  }
+
+  .home-list {
+    padding: 16px 12px;
+  }
+
+  .home-label {
+    font-size: 15px;
+    padding-top: 6%;
+  }
+
+  .home-input {
+    --padding-top: 14px;
+    --padding-bottom: 14px;
+    font-size: 15px;
+  }
+
+  .home-btn {
+    --padding-top: 18px;
+    --padding-bottom: 18px;
+    height: 48px;
+    font-size: 15px;
+  }
+}
+
+/* Animation for form elements */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.home-form > * {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.home-form > *:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.home-form > *:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.home-form > *:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+/* Date Picker Modal Styles */
+.datetime-modal .modal-wrapper {
+  --height: 60%;
+  --width: 90%;
+  --max-width: 400px;
+  --border-radius: 16px;
+}
+
+.datetime-content {
+  --padding-top: 0;
+  --padding-bottom: 0;
+}
+
+.datetime-picker {
+  --background: #fff;
+  padding: 0;
+  margin: 0 auto;
+}
+
+.datetime-footer {
+  padding: 16px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  border-top: 1px solid var(--ion-color-light-shade, #ddd);
+  background: var(--ion-color-light, #f4f5f8);
+}
+
+.date-title {
+  text-align: center;
+  font-weight: 600;
+}
+
+/* Custom styling for the datetime */
+.datetime-picker {
+  background: #fff;
+}
+
+.datetime-picker .calendar-body {
+  padding: 8px;
+}
+
+.datetime-picker .calendar-day {
+  border-radius: 50%;
+  margin: 2px;
+}
+
+.datetime-picker .calendar-day:not(.calendar-day-disabled):hover {
+  background: var(--ion-color-primary-tint, #4c8dff);
+  color: white;
+}
+
+.datetime-picker .calendar-day-active {
+  background: var(--ion-color-primary, #3880ff);
+  color: white;
 }

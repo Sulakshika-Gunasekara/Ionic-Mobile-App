@@ -4,15 +4,18 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  background: #f8f9fa;
+  background: #7eabd8;
   padding: 20px;
+}
+.vehicle-card-content {
+  margin-left: 10%;
 }
 
 /* ===== List Styling ===== */
 .vehicles-list {
   width: 100%;
   max-width: 600px;
-  margin: 0 auto;
+  margin-left: 20%;
 }
 
 /* ===== Vehicle Card ===== */
@@ -20,7 +23,8 @@
   border-radius: 16px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
   margin-bottom: 20px;
-  background: #fff;
+
+  background: #eceef0;
   padding: 18px 16px;
   display: flex;
   flex-direction: column;
@@ -35,7 +39,6 @@
 
 /* ===== Vehicle Image ===== */
 .vehicle-card img {
-  width: 100%;
   max-height: 180px;
   object-fit: cover;
   border-radius: 12px;
@@ -61,7 +64,12 @@
   margin: 2px 0;
   color: #666;
 }
-
+.search-again-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 100px;
+}
 /* ===== See More Button ===== */
 .vehicle-card ion-button {
   margin-top: 12px;
