@@ -67,6 +67,11 @@
       "email": "d4@site.com",
       "password": "$2a$10$0RYmLdHA..PbsKdJNz886e36C/QqGVT2NlFz6K1fbFjJWsm3B9TAW",
       "id": "A92c_0j"
+    },
+    {
+      "email": "hasindus48@gmail.com",
+      "password": "$2a$10$upp5qgBAiSQ6Tlxus4o7qODedimlBsxsv07lMuGrYns9D8XqNkM1e",
+      "id": "YfvEwXA"
     }
   ],
   "vehicles": [
@@ -77,17 +82,15 @@
       "brand": "Toyota",
       "model": "HiAce Carrier",
       "pricePerDay": 120,
-
       "isFavorite": false
     },
     {
       "id": "2",
-      "image": "https://tse2.mm.bing.net/th/id/OIP.u3e2dcTzUY1pSgi4H1a3VQHaCe?pid=Api&P=0&h=220",
+      "image": "https://emucarcarriers.com.au/public/images/service/car-carrier.webp",
       "type": "TWO_VEHICLES",
       "brand": "Honda",
       "model": "Dio Carrier",
       "pricePerDay": 50,
-
       "isFavorite": false
     },
     {
@@ -97,7 +100,6 @@
       "brand": "Suzuki",
       "model": "Swift Transporter",
       "pricePerDay": 130,
-
       "isFavorite": false
     },
     {
@@ -107,7 +109,6 @@
       "brand": "Yamaha",
       "model": "FZ Carrier",
       "pricePerDay": 80,
-
       "isFavorite": false
     },
     {
@@ -117,7 +118,6 @@
       "brand": "Honda",
       "model": "Civic Carrier",
       "pricePerDay": 150,
-
       "isFavorite": false
     },
     {
@@ -127,7 +127,6 @@
       "brand": "Honda",
       "model": "Civic Carrier",
       "pricePerDay": 150,
-
       "isFavorite": false
     },
     {
@@ -137,7 +136,6 @@
       "brand": "Honda",
       "model": "Civic Carrier",
       "pricePerDay": 150,
-
       "isFavorite": false
     },
     {
@@ -147,7 +145,6 @@
       "brand": "Honda",
       "model": "Civic Carrier",
       "pricePerDay": 150,
-
       "isFavorite": true
     }
   ],
@@ -226,6 +223,33 @@
       "date": "2025-09-07",
       "status": "confirmed",
       "createdAt": "2025-09-06T10:00:00.000Z"
+    }
+  ],
+  "favourites": [
+    {
+      "id": "1",
+      "userId": "3",
+      "vehicleId": "2"
+    },
+    {
+      "id": "2",
+      "userId": "3",
+      "vehicleId": "5"
+    },
+    {
+      "id": "3",
+      "userId": "4",
+      "vehicleId": "1"
+    },
+    {
+      "id": "4",
+      "userId": "4",
+      "vehicleId": "3"
+    },
+    {
+      "id": "5",
+      "userId": "5",
+      "vehicleId": "4"
     }
   ]
 }

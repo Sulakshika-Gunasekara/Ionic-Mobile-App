@@ -105,8 +105,8 @@ const Booking: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string>("");
 
-  const [startDate, setStartDate] = useState<string>("");
-  const [endDate, setEndDate] = useState<string>("");
+  // const [startDate, setStartDate] = useState<string>("");
+  // const [endDate, setEndDate] = useState<string>("");
 
   // From (origin): dropdown -> coords
   const [fromLocation, setFromLocation] = useState<string>("");
@@ -124,10 +124,10 @@ const Booking: React.FC = () => {
   }>({ open: false, msg: "", color: undefined });
 
   // date modal
-  const [showStartPicker, setShowStartPicker] = useState(false);
-  const [tempStartDate, setTempStartDate] = useState<string | undefined>(
-    undefined
-  );
+  // const [showStartPicker, setShowStartPicker] = useState(false);
+  // const [tempStartDate, setTempStartDate] = useState<string | undefined>(
+  //   undefined
+  // );
 
   useEffect(() => {
     const run = async () => {
@@ -146,20 +146,20 @@ const Booking: React.FC = () => {
     run();
   }, [id]);
 
-  const formatDate = (iso?: string) =>
-    iso ? new Date(iso).toLocaleDateString() : "Select date";
+  // const formatDate = (iso?: string) =>
+  //   iso ? new Date(iso).toLocaleDateString() : "Select date";
 
-  const totalDays = useMemo(() => {
-    if (!startDate || !endDate) return 0;
-    const start = new Date(startDate);
-    const end = new Date(endDate);
-    const s = new Date(start.getFullYear(), start.getMonth(), start.getDate());
-    const e = new Date(end.getFullYear(), end.getMonth(), end.getDate());
-    const ms = e.getTime() - s.getTime();
-    if (ms < 0) return 0;
-    const days = Math.ceil(ms / (1000 * 60 * 60 * 24)) || 1;
-    return Math.max(days, 1);
-  }, [startDate, endDate]);
+  // const totalDays = useMemo(() => {
+  //   if (!startDate || !endDate) return 0;
+  //   const start = new Date(startDate);
+  //   const end = new Date(endDate);
+  //   const s = new Date(start.getFullYear(), start.getMonth(), start.getDate());
+  //   const e = new Date(end.getFullYear(), end.getMonth(), end.getDate());
+  //   const ms = e.getTime() - s.getTime();
+  //   if (ms < 0) return 0;
+  //   const days = Math.ceil(ms / (1000 * 60 * 60 * 24)) || 1;
+  //   return Math.max(days, 1);
+  // }, [startDate, endDate]);
 
   // Using pricePerDay as "Rate per kilometer" (to match your UI text)
   const pricePerKm = vehicle?.pricePerDay ?? 0;
@@ -178,25 +178,19 @@ const Booking: React.FC = () => {
   }, [vehicle, pricePerKm, distanceKm]);
 
   // Minimal validity: have vehicle, dates, from dropdown chosen, and a destination string
-  const canSubmit =
-    !!vehicle &&
-    !!startDate &&
-    !!endDate &&
-    totalDays > 0 &&
-    !!fromLocation &&
-    !!toLocation;
+  const canSubmit = !!vehicle && !!fromLocation && !!toLocation;
 
-  const openStartPicker = () => {
-    setTempStartDate(startDate || new Date().toISOString());
-    setShowStartPicker(true);
-  };
-  const cancelStartPicker = () => setShowStartPicker(false);
-  const confirmStartPicker = () => {
-    const picked = tempStartDate || new Date().toISOString();
-    setStartDate(picked);
-    if (!endDate) setEndDate(picked);
-    setShowStartPicker(false);
-  };
+  // const openStartPicker = () => {
+  //   setTempStartDate(startDate || new Date().toISOString());
+  //   setShowStartPicker(true);
+  // };
+  // const cancelStartPicker = () => setShowStartPicker(false);
+  // const confirmStartPicker = () => {
+  //   const picked = tempStartDate || new Date().toISOString();
+  //   setStartDate(picked);
+  //   if (!endDate) setEndDate(picked);
+  //   setShowStartPicker(false);
+  // };
 
   // When fromLocation changes, map to coords
   useEffect(() => {
@@ -310,9 +304,7 @@ const Booking: React.FC = () => {
       vehicleImage: vehicle?.image,
       vehicleType: vehicle?.type,
       ratePerKm: pricePerKm,
-      startDate,
-      endDate,
-      totalDays,
+
       fromLocation, // label (city)
       fromCoords, // lat/lng
       toLocation, // text address
@@ -414,13 +406,13 @@ const Booking: React.FC = () => {
               <IonCardContent>
                 <IonList>
                   {/* Dates */}
-                  <IonItem button detail onClick={openStartPicker}>
+                  {/* <IonItem button detail onClick={openStartPicker}>
                     <IonLabel>Start Date</IonLabel>
                     <IonNote slot="end" style={{ marginRight: 8 }}>
                       {formatDate(startDate)}
                     </IonNote>
                     <IonIcon slot="end" icon={calendarOutline} />
-                  </IonItem>
+                  </IonItem> */}
 
                   {/* From (origin) */}
                   <IonItem>
@@ -510,7 +502,7 @@ const Booking: React.FC = () => {
         />
 
         {/* Start date modal */}
-        <IonModal isOpen={showStartPicker} onDidDismiss={cancelStartPicker}>
+        {/* <IonModal isOpen={showStartPicker} onDidDismiss={cancelStartPicker}>
           <IonHeader>
             <IonToolbar>
               <IonTitle>Select date</IonTitle>
@@ -531,7 +523,7 @@ const Booking: React.FC = () => {
               preferWheel={true}
             />
           </IonContent>
-        </IonModal>
+        </IonModal> */}
       </IonContent>
     </IonPage>
   );

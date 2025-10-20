@@ -15,6 +15,10 @@ import {
   IonNote,
   IonPage,
   IonTitle,
+  IonToast,
+  IonGrid,
+  IonRow,
+  IonCol,
   IonToolbar,
 } from "@ionic/react";
 import React, { useMemo } from "react";
@@ -67,25 +71,12 @@ const FinalPage: React.FC = () => {
     return [
       { label: "Vehicle ID", value: String(data.vehicleId) },
       { label: "Vehicle Type", value: data.vehicleType },
-      //   { label: "Start Date", value: prettyDate(data.startDate) },
-      //   { label: "End Date", value: prettyDate(data.endDate) },
-      //   { label: "Total Days", value: String(data.totalDays) },
-      { label: "From", value: data.fromLocation },
-      {
-        label: "From Coords",
-        value: data.fromCoords
-          ? `${data.fromCoords.lat.toFixed(5)}, ${data.fromCoords.lng.toFixed(
-              5
-            )}`
-          : "—",
-      },
-      { label: "To", value: data.toLocation || "—" },
-      {
-        label: "To Coords",
-        value: data.toCoords
-          ? `${data.toCoords.lat.toFixed(5)}, ${data.toCoords.lng.toFixed(5)}`
-          : "—",
-      },
+      { label: "Date", value: prettyDate(data.startDate) },
+
+      { label: "Pickup", value: data.fromLocation },
+
+      { label: "Dropoff", value: data.toLocation || "—" },
+
       {
         label: "Distance",
         value: data.distanceKm != null ? `${data.distanceKm} km` : "—",
@@ -133,12 +124,14 @@ const FinalPage: React.FC = () => {
                 <IonCardTitle>Review & Confirm</IonCardTitle>
                 <IonCardSubtitle>Vehicle #{data.vehicleId}</IonCardSubtitle>
               </IonCardHeader>
-              <IonCardContent>
+              {/* <IonCardContent>
                 <IonList lines="none">
                   {summary!.map((row) => (
                     <IonItem key={row.label}>
-                      <IonLabel>{row.label}</IonLabel>
-                      <IonNote slot="end">{row.value}</IonNote>
+                      <IonLabel className="label-fixed">{row.label}</IonLabel>
+                      <IonNote slot="end" className="not-wrap">
+                        {row.value}
+                      </IonNote>
                     </IonItem>
                   ))}
                 </IonList>
@@ -147,10 +140,35 @@ const FinalPage: React.FC = () => {
                     Confirm Booking
                   </IonButton>
                 </div>
-              </IonCardContent>
+              </IonCardContent> */}
+              <IonList lines="none">
+                {summary!.map((row) => (
+                  <IonItem key={row.label} lines="none">
+                    <IonGrid>
+                      <IonRow>
+                        <IonCol size="4">
+                          <IonLabel className="summary-label">
+                            {row.label}
+                          </IonLabel>
+                        </IonCol>
+                        <IonCol size="8">
+                          <IonNote className="summary-value">
+                            {row.value}
+                          </IonNote>
+                        </IonCol>
+                      </IonRow>
+                    </IonGrid>
+                  </IonItem>
+                ))}
+              </IonList>
             </IonCard>
           </>
         )}
+        <div className="ion-padding">
+          <IonButton expand="block" color="primary">
+            Confirm Booking
+          </IonButton>
+        </div>
       </IonContent>
     </IonPage>
   );

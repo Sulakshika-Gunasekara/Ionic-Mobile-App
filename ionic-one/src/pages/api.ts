@@ -249,3 +249,9 @@ export async function getAvailableVehiclesTomorrow(
   const tomorrowStr = formatDateForAPI(tomorrow);
   return getAvailableVehicles(tomorrowStr, type, location);
 }
+
+export async function getFavouriteVehicles<T = any>(
+  userId: string | number
+): Promise<T> {
+  return apiGet<T>(`/users/${userId}/favourites`);
+}

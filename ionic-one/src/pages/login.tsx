@@ -67,21 +67,21 @@ const Login: React.FC<LoginProps> = ({ history }) => {
   };
 
   return (
-    <IonPage className="ion-text-center ion-align-items-center ion-justify-content-center ion-padding">
-      <IonContent className="ion-margin ion-text-center ion-align-items-center ion-justify-content-center ">
+    <IonPage className="ion-padding  " style={{ scrollY: "hidden" }}>
+      <IonContent className="login-center ">
         <form className="login-form" onSubmit={handleSubmit}>
-          <IonItem lines="none">
+          <IonItem lines="none" className="ion-justify-content-center">
             <IonImg
               className="width:50px height:50px"
               src="https://png.pngtree.com/png-clipart/20230817/original/pngtree-taxi-booking-rgb-color-icon-prebooking-design-business-vector-picture-image_11014402.png"
             />
           </IonItem>
 
-          <IonItem lines="none">
+          <IonItem lines="none" className="ion-text-center">
             <IonTitle className="login-title ">Login</IonTitle>
           </IonItem>
 
-          <IonItem lines="none">
+          <IonItem lines="none" className="ion-margin-bottom">
             <IonLabel position="stacked" className="label-text">
               Email
             </IonLabel>
@@ -94,7 +94,7 @@ const Login: React.FC<LoginProps> = ({ history }) => {
             />
           </IonItem>
 
-          <IonItem lines="none">
+          <IonItem lines="none" className="ion-margin-bottom">
             <IonLabel position="stacked" className="label-text ">
               Password
             </IonLabel>
@@ -111,7 +111,7 @@ const Login: React.FC<LoginProps> = ({ history }) => {
             type="submit"
             expand="block"
             disabled={loading}
-            className="login-btn ion-padding-top">
+            className="login-btn">
             {loading ? "Logging in..." : "Login"}
           </IonButton>
 

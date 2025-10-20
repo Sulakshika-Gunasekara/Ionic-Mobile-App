@@ -121,7 +121,7 @@ const Vehicles: React.FC = () => {
         </IonToolbar>
       </IonHeader>
 
-      <IonContent>
+      <IonContent className="vehicles-content">
         {loading && (
           <div
             style={{
@@ -139,7 +139,7 @@ const Vehicles: React.FC = () => {
         )}
 
         {error && !loading && (
-          <div style={{ padding: 16 }}>
+          <div style={{ padding: 16 }} className="error-container">
             <IonItem color="danger" lines="none">
               <IonLabel className="ion-text-wrap">
                 <h2>Error</h2>
@@ -150,14 +150,14 @@ const Vehicles: React.FC = () => {
               expand="block"
               fill="outline"
               routerLink="/"
-              style={{ marginTop: 16 }}>
+              className="back-button">
               Back to Search
             </IonButton>
           </div>
         )}
 
         {!loading && !error && vehicles.length === 0 && (
-          <div style={{ padding: 16, textAlign: "center" }}>
+          <div className="empty-state">
             <IonIcon
               icon={carOutline}
               size="large"
@@ -177,7 +177,7 @@ const Vehicles: React.FC = () => {
 
         {!loading && !error && vehicles.length > 0 && (
           <>
-            <div style={{ padding: "16px 16px 8px 16px" }}>
+            {/* <div className="results-count">
               <p
                 style={{
                   color: "var(--ion-color-medium)",
@@ -187,14 +187,17 @@ const Vehicles: React.FC = () => {
                 Found {vehicles.length} vehicle
                 {vehicles.length !== 1 ? "s" : ""} available
               </p>
-            </div>
+            </div> */}
 
-            <IonList>
+            <IonList className="vehicle-list">
               {vehicles.map((vehicle) => (
                 <IonCard key={vehicle.id} className="vehicle-card">
                   {vehicle.image && (
-                    <div style={{ position: "relative" }}>
+                    <div
+                      className="vehicle-image-container"
+                      style={{ position: "relative" }}>
                       <img
+                        className="vehicle-image"
                         src={vehicle.image}
                         alt={`${vehicle.brand || ""} ${
                           vehicle.model || vehicle.type
@@ -212,6 +215,7 @@ const Vehicles: React.FC = () => {
                       />
                       {vehicle.pricePerDay && (
                         <div
+                          className="price-badge"
                           style={{
                             position: "absolute",
                             top: "8px",
@@ -229,8 +233,8 @@ const Vehicles: React.FC = () => {
                     </div>
                   )}
 
-                  <IonCardHeader>
-                    <IonCardTitle>
+                  <IonCardHeader className="vehicle-card-header">
+                    <IonCardTitle className="vehicle-title">
                       <IonIcon
                         icon={carOutline}
                         style={{ marginRight: 8, verticalAlign: "-2px" }}
@@ -242,14 +246,9 @@ const Vehicles: React.FC = () => {
                     </IonCardTitle>
                   </IonCardHeader>
 
-                  <IonCardContent>
-                    <div style={{ marginBottom: 12 }}>
-                      <p
-                        style={{
-                          margin: "4px 0",
-                          display: "flex",
-                          alignItems: "center",
-                        }}>
+                  <IonCardContent className="vehicle-card-content">
+                    <div className="vehicle-details">
+                      <p className="vehicle-detail">
                         <IonIcon
                           icon={carOutline}
                           style={{ marginRight: 6, minWidth: "16px" }}
@@ -263,36 +262,9 @@ const Vehicles: React.FC = () => {
                         </span>
                       </p>
 
-                      <p
-                        style={{
-                          margin: "4px 0",
-                          display: "flex",
-                          alignItems: "center",
-                        }}>
-                        <IonIcon
-                          icon={pinOutline}
-                          style={{ marginRight: 6, minWidth: "16px" }}
-                        />
-                        <span>
-                          Location: <strong>{vehicle.location}</strong>
-                        </span>
-                      </p>
-
                       {vehicle.vehicles && (
-                        <p
-                          style={{
-                            margin: "4px 0",
-                            display: "flex",
-                            alignItems: "center",
-                          }}>
-                          <span
-                            style={{
-                              marginRight: 6,
-                              minWidth: "16px",
-                              textAlign: "center",
-                            }}>
-                            🚐
-                          </span>
+                        <p className="vehicle-detail">
+                          <span className="vehicle-icon">🚐</span>
                           <span>
                             Available: <strong>{vehicle.vehicles}</strong>
                           </span>
@@ -300,20 +272,8 @@ const Vehicles: React.FC = () => {
                       )}
 
                       {vehicle.pricePerDay && (
-                        <p
-                          style={{
-                            margin: "4px 0",
-                            display: "flex",
-                            alignItems: "center",
-                          }}>
-                          <span
-                            style={{
-                              marginRight: 6,
-                              minWidth: "16px",
-                              textAlign: "center",
-                            }}>
-                            💰
-                          </span>
+                        <p className="vehicle-detail">
+                          <span className="vehicle-icon">💰</span>
                           <span>
                             Price:{" "}
                             <strong>
@@ -335,8 +295,8 @@ const Vehicles: React.FC = () => {
               ))}
             </IonList>
 
-            <div style={{ padding: 16 }}>
-              <IonButton expand="block" fill="outline" routerLink="/">
+            <div className="search-again-container">
+              <IonButton expand="block" fill="outline" routerLink="/home">
                 Search Again
               </IonButton>
             </div>
